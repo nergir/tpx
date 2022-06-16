@@ -1,0 +1,385 @@
+
+<html>
+<head>
+	<title>ngs - ng solution. For everyone</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+
+
+
+</head>
+<body>
+This place for static block assign programically self
+<hr>
+hello world!
+<hr>
+<table>
+    <tr>
+            <td>0:0</td>
+<td>0:1</td>
+<td>0:2</td>
+        </tr>
+<tr>
+            <td>1:0</td>
+<td>1:1</td>
+<td>1:2</td>
+        </tr>
+<tr>
+            <td>2:0</td>
+<td>2:1</td>
+<td>2:2</td>
+        </tr>
+</table>
+<hr>
+<div>
+    BARS IN BERLIN:
+    <ul>
+        <li><strong>Sonderbar</strong></li>
+        <li>best red vine in town</li>
+    </ul>
+<ul>
+        <li><strong>Wunderbar</strong></li>
+        <li>happy hour ends at 9 pm</li>
+    </ul>
+</div>
+<hr>
+Coding PHP is fun
+<hr>
+variable1 variable2
+variable1 variable2
+<hr>
+<div name=div>work where inside name attribute(optional by allowed tags: textarea, select, iframe, div), can skip with value attribute</div>
+<hr>
+My invented code advantage:<xmp>For description changed {} to [], name to nane
+< !-- START blockname -- >...< !-- END blockname -- > => < !-- blockname ... blockname -- > Visible block.(optional if fix=True)
+< !-- blockname ...-- > => Not visible block, can output only self or if is [blockname] inside visible block.
+[source] => [source] if is debug=True and undefined block
+<form>...</from> => [form] (only if form is one)
+<tag nane=name0>...</tag> => <tag nane=name0>[name0]</tag>
+<input type=text name=value1 value=''> => <input type name=value value=''>
+<input type=text nane=value2 value='dont overwrite default'> => <input type nane=value2 value='dont overwrite default'>
+<textarea nane=text></textarea> => <textarea nane=text>[text]</textarea>
+For future
+< !-- url -- > or < !-- INCLUDE ...-- > - include file like template,css,js or other
+<select nane=select1></select> => <select nane=select1><option value=value1><option value=value2>...<option value=valuen></select>
+Your comments,feedbacks and bugs send me by email girner@gmail.com
+</xmp>
+
+<hr>
+
+<form name=User value='' action=?f=user method=post enctype=multipart/form-data onSubmit=return(check(this)) lang='Ar iÅ¡siÅ³sti skelbimÄ…?' onReset="return(confirm('Ar iÅ¡valyti anketos laukus?'))">
+<p class=ln>Privilegija</p><select lang='0`Parinkite privilegija' name=Privilegija><option value=0><option value=1>Admin</option></select>
+<fieldset><legend onclick=toggle(this.nextSibling) style=cursor:pointer>Informacija</legend><div>
+<p class=ln>Vardas</p><input type=text name=Name value='Nerijus' style=text-transform:capitalize>
+<br><p class=ln>PavardÄ—</p><input type=text name=Surname value='Girskis' style=text-transform:capitalize>
+<br><p class=ln>Gimtadienis</p><input type=text name=Gimtadienis value='1979-03-18'> <input type=button title='Kalendorius' id=date class=sq onclick=showXY(event,'cldr') value=...>
+<br><p class=ln>Slapyvardis</p><input type=text name=Slapyvardis value='girner'>
+<br><p class=ln>SlaptaÅ¾odis</p><input type=password name=Login value='' maxLength=20>
+
+</div>
+</fieldset>
+<fieldset><legend onclick=toggle(this.nextSibling) style=cursor:pointer>Kontaktai</legend><div>
+<p class=ln>Telefonas</p><input type=text name=Telefonas value='+370-65596865' maxLength=8>
+<br><p class=ln>PaÅ¡tas</p><input type=text name=Paðtas value='girner@gmail.com' maxLength=20>
+</div>
+</fieldset>
+<fieldset><legend onclick=toggle(this.nextSibling) style=cursor:pointer>Adresas</legend><div>
+<p class=ln>Miestas</p><input type=text name=Miestas value='Klaipëda' style=text-transform:capitalize>
+<br><p class=ln>GatvÄ—</p><input type=text name=Gatvë value=''>
+<br><p class=ln>Namas</p><input type=text name=Namas value=''>
+<br><p class=ln>Butas</p><input type=text name=Butas value=''>
+</div>
+</fieldset>
+<fieldset><legend onclick=toggle(this.nextSibling) style=cursor:pointer>Extra</legend><div style=display:none>
+<p class=ln>Kaina</p><input type=text name=Kaina value='' maxLength=20> <input type=button title='Kalkuliatorius' id=number class=sq onclick=showXY(event,'calc') value=...>
+<br><p class=ln>Spalva</p><input type=text name=Spalva maxLength=6 style=text-transform:uppercase onkeydown=keydown(event,'clrs') onkeyup=if((s=clrget(Title(this.value)))==this.value)return;this.value=''> <input type=button title='Spalvø paletë' id=color class=sq onclick=showXY(event,'clrs') value=...>
+<br><p class=ln>Logo</p><input name=Logo value='' lang='/^\d+(,\d+)*$/'> <input type=button class=sq value=... onclick=showXY(event,'upload',uploading,'Byla') title='Parinkti bylà'>
+<br><p class=ln>Foto</p><input name=Foto value='' lang='/^\d+(,\d+)*$/'> <input type=button class=sq value=... onclick=showXY(event,'upload',uploading,'Byla') title='Parinkti bylà'>
+<br><p class=ln>CV</p><input name=CV value='' lang='/^\d+(,\d+)*$/'>
+</div>
+</fieldset>
+<img src=img/1.ico title=Tinka onclick=dosubmit(this)>
+<img src=img/reset.ico title=Valyti onclick=doreset(this)>
+<img src=img/help.ico title=Pagalba onclick=doPagalba()>
+<img src=img/save.ico title=Atsiminti onclick=doForma(this,1)>
+<img src=img/open.ico title=Atverti onclick=doForma(this)>
+<img src=null.ico class='icon id' title=ID onclick=doID(this)>
+<input type=submit value=' ' Pateikti style=width:16;height:16;border:0>
+<input type=hidden name=ID value=''>
+</form> => [form1]
+<form>...</from> => [form] (only if form is one)
+<tag nane=name0>...</tag> => <tag nane=name0>[name0]</tag>
+<input type=text name=value1 value=''> => <input type name=value value=''>
+<input type=text nane=value2 value='dont overwrite default'> => <input type nane=value2 value='dont overwrite default'>
+<textarea nane=text></textarea> => <textarea nane=text>[text]</textarea>
+For future
+< !-- url -- > or < !-- INCLUDE ...-- > - include file like template,css,js or other
+<select nane=select1></select> => <select nane=select1><option value=value1><option value=value2>...<option value=valuen></select>
+Your comments,feedbacks and bugs send me by email girner@gmail.com
+</xmp>
+
+<hr>
+
+<form name=User value='' action=?f=user method=post enctype=multipart/form-data onSubmit=return(check(this)) lang='Ar iÅ¡siÅ³sti skelbimÄ…?' onReset="return(confirm('Ar iÅ¡valyti anketos laukus?'))">
+<p class=ln>Privilegija</p><select lang='0`Parinkite privilegija' name=Privilegija><option value=0><option value=1>Admin</option></select>
+<fieldset><legend onclick=toggle(this.nextSibling) style=cursor:pointer>Informacija</legend><div>
+<p class=ln>Vardas</p><input type=text name=Name value='Nerijus' style=text-transform:capitalize>
+<br><p class=ln>PavardÄ—</p><input type=text name=Surname value='Girskis' style=text-transform:capitalize>
+<br><p class=ln>Gimtadienis</p><input type=text name=Gimtadienis value='1979-03-18'> <input type=button title='Kalendorius' id=date class=sq onclick=showXY(event,'cldr') value=...>
+<br><p class=ln>Slapyvardis</p><input type=text name=Slapyvardis value='girner'>
+<br><p class=ln>SlaptaÅ¾odis</p><input type=password name=Login value='' maxLength=20>
+
+</div>
+</fieldset>
+<fieldset><legend onclick=toggle(this.nextSibling) style=cursor:pointer>Kontaktai</legend><div>
+<p class=ln>Telefonas</p><input type=text name=Telefonas value='+370-65596865' maxLength=8>
+<br><p class=ln>PaÅ¡tas</p><input type=text name=Paðtas value='girner@gmail.com' maxLength=20>
+</div>
+</fieldset>
+<fieldset><legend onclick=toggle(this.nextSibling) style=cursor:pointer>Adresas</legend><div>
+<p class=ln>Miestas</p><input type=text name=Miestas value='KlaipÄ—da' style=text-transform:capitalize>
+<br><p class=ln>GatvÄ—</p><input type=text name=Gatvë value=''>
+<br><p class=ln>Namas</p><input type=text name=Namas value=''>
+<br><p class=ln>Butas</p><input type=text name=Butas value=''>
+</div>
+</fieldset>
+<fieldset><legend onclick=toggle(this.nextSibling) style=cursor:pointer>Extra</legend><div style=display:none>
+<p class=ln>Kaina</p><input type=text name=Kaina value='' maxLength=20> <input type=button title='Kalkuliatorius' id=number class=sq onclick=showXY(event,'calc') value=...>
+<br><p class=ln>Spalva</p><input type=text name=Spalva maxLength=6 style=text-transform:uppercase onkeydown=keydown(event,'clrs') onkeyup=if((s=clrget(Title(this.value)))==this.value)return;this.value=''> <input type=button title='Spalvø paletë' id=color class=sq onclick=showXY(event,'clrs') value=...>
+<br><p class=ln>Logo</p><input name=Logo value='' lang='/^\d+(,\d+)*$/'> <input type=button class=sq value=... onclick=showXY(event,'upload',uploading,'Byla') title='Parinkti bylà'>
+<br><p class=ln>Foto</p><input name=Foto value='' lang='/^\d+(,\d+)*$/'> <input type=button class=sq value=... onclick=showXY(event,'upload',uploading,'Byla') title='Parinkti bylà'>
+<br><p class=ln>CV</p><input name=CV value='' lang='/^\d+(,\d+)*$/'>
+</div>
+</fieldset>
+<img src=img/1.ico title=Tinka onclick=dosubmit(this)>
+<img src=img/reset.ico title=Valyti onclick=doreset(this)>
+<img src=img/help.ico title=Pagalba onclick=doPagalba()>
+<img src=img/save.ico title=Atsiminti onclick=doForma(this,1)>
+<img src=img/open.ico title=Atverti onclick=doForma(this)>
+<img src=null.ico class='icon id' title=ID onclick=doID(this)>
+<input type=submit value=' ' Pateikti style=width:16;height:16;border:0>
+<input type=hidden name=ID value=''>
+</form>
+<input name=demo value='&lt;fix&gt;&lt;overwrite&gt;'>
+<input name=test value='overwrited'>
+
+</body>
+</html>
+
+<pre>
+vars= ['Name', 'demo', 'Slapyvardis', 'Gimtadienis', 'bar', 'div', 'row', 'Surname', 'list', 'Telefonas', 'Miestas', 'PaÅ¡tas', 'test', 'hello_world']
+blocks= ['', 'content', 'bar', 'form', 'tr', 'this', 'list', 'ona', 'secondas', 'one', 'cell', 'subcontent', 'tbl', 'human', 'row', 'opt1']
+################################################################################
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+
+from template import *
+from cgi import escape
+
+form="""
+&lt;form name=User action=?f=user method=post enctype=multipart/form-data onSubmit=return(check(this)) lang='Ar iðsiøsti skelbimà?' onReset="return(confirm('Ar iðvalyti anketos laukus?'))"&gt;
+&lt;p class=ln&gt;Privilegija&lt;/p&gt;&lt;select lang='0`Parinkite privilegija' name=Privilegija&gt;&lt;option value=0&gt;&lt;option value=1&gt;Admin&lt;/option&gt;&lt;/select&gt;
+&lt;fieldset&gt;&lt;legend onclick=toggle(this.nextSibling) style=cursor:pointer&gt;Informacija&lt;/legend&gt;&lt;div&gt;
+&lt;p class=ln&gt;Vardas&lt;/p&gt;&lt;input type=text name=Name style=text-transform:capitalize&gt;
+&lt;br&gt;&lt;p class=ln&gt;Pavardë&lt;/p&gt;&lt;input type=text name=Surname style=text-transform:capitalize&gt;
+&lt;br&gt;&lt;p class=ln&gt;Gimtadienis&lt;/p&gt;&lt;input type=text name=Gimtadienis&gt; &lt;input type=button title='Kalendorius' id=date class=sq onclick=showXY(event,'cldr') value=...&gt;
+&lt;br&gt;&lt;p class=ln&gt;Slapyvardis&lt;/p&gt;&lt;input type=text name=Slapyvardis&gt;
+&lt;br&gt;&lt;p class=ln&gt;Slaptaþodis&lt;/p&gt;&lt;input type=password name=Login maxLength=20&gt;
+&lt;!--human--&gt;
+&lt;/div&gt;
+&lt;/fieldset&gt;
+&lt;fieldset&gt;&lt;legend onclick=toggle(this.nextSibling) style=cursor:pointer&gt;Kontaktai&lt;/legend&gt;&lt;div&gt;
+&lt;p class=ln&gt;Telefonas&lt;/p&gt;&lt;input type=text name=Telefonas maxLength=8&gt;
+&lt;br&gt;&lt;p class=ln&gt;Paðtas&lt;/p&gt;&lt;input type=text name=Paðtas maxLength=20&gt;
+&lt;/div&gt;
+&lt;/fieldset&gt;
+&lt;fieldset&gt;&lt;legend onclick=toggle(this.nextSibling) style=cursor:pointer&gt;Adresas&lt;/legend&gt;&lt;div&gt;
+&lt;p class=ln&gt;Miestas&lt;/p&gt;&lt;input type=text name=Miestas style=text-transform:capitalize&gt;
+&lt;br&gt;&lt;p class=ln&gt;Gatvë&lt;/p&gt;&lt;input type=text name=Gatvë&gt;
+&lt;br&gt;&lt;p class=ln&gt;Namas&lt;/p&gt;&lt;input type=text name=Namas&gt;
+&lt;br&gt;&lt;p class=ln&gt;Butas&lt;/p&gt;&lt;input type=text name=Butas&gt;
+&lt;/div&gt;
+&lt;/fieldset&gt;
+&lt;fieldset&gt;&lt;legend onclick=toggle(this.nextSibling) style=cursor:pointer&gt;Extra&lt;/legend&gt;&lt;div style=display:none&gt;
+&lt;p class=ln&gt;Kaina&lt;/p&gt;&lt;input type=text name=Kaina maxLength=20&gt; &lt;input type=button title='Kalkuliatorius' id=number class=sq onclick=showXY(event,'calc') value=...&gt;
+&lt;br&gt;&lt;p class=ln&gt;Spalva&lt;/p&gt;&lt;input type=text name=Spalva maxLength=6 style=text-transform:uppercase onkeydown=keydown(event,'clrs') onkeyup=if((s=clrget(Title(this.value)))==this.value)return;this.value=s;color.style.backgroundColor=s&gt; &lt;input type=button title='Spalvø paletë' id=color class=sq onclick=showXY(event,'clrs') value=...&gt;
+&lt;br&gt;&lt;p class=ln&gt;Logo&lt;/p&gt;&lt;input name=Logo lang='/^\d+(,\d+)*$/'&gt; &lt;input type=button class=sq value=... onclick=showXY(event,'upload',uploading,'Byla') title='Parinkti bylà'&gt;
+&lt;br&gt;&lt;p class=ln&gt;Foto&lt;/p&gt;&lt;input name=Foto lang='/^\d+(,\d+)*$/'&gt; &lt;input type=button class=sq value=... onclick=showXY(event,'upload',uploading,'Byla') title='Parinkti bylà'&gt;
+&lt;br&gt;&lt;p class=ln&gt;CV&lt;/p&gt;&lt;input name=CV lang='/^\d+(,\d+)*$/'&gt;
+&lt;/div&gt;
+&lt;/fieldset&gt;
+&lt;img src=img/1.ico title=Tinka onclick=dosubmit(this)&gt;
+&lt;img src=img/reset.ico title=Valyti onclick=doreset(this)&gt;
+&lt;img src=img/help.ico title=Pagalba onclick=doPagalba()&gt;
+&lt;img src=img/save.ico title=Atsiminti onclick=doForma(this,1)&gt;
+&lt;img src=img/open.ico title=Atverti onclick=doForma(this)&gt;
+&lt;img src=null.ico class='icon id' title=ID onclick=doID(this)&gt;
+&lt;input type=submit value=' ' Pateikti style=width:16;height:16;border:0&gt;
+&lt;input type=hidden name=ID&gt;
+&lt;/form&gt;
+&lt;input value=321 name=demo&gt;
+&lt;input name=test value=123&gt;
+"""
+line="""
+&lt;html&gt;
+&lt;head&gt;
+	&lt;title&gt;ngs — ng solution. For everyone&lt;/title&gt;
+	&lt;meta http-equiv="Content-Type" content="text/html; charset=utf-8"&gt;
+&lt;!--ona at-si-ti-ko --&gt;
+&lt;!--tbl
+	this is the
+	total
+	&lt;!--tr
+		&lt;!--this 
+		is another {sources}
+		this--&gt;&lt;!--secondas 
+		
+		
+		secondas--&gt; 
+	tr--&gt;
+	first
+--&gt;
+&lt;!--content
+	hello
+	&lt;!--subcontent
+		inside of hello1
+	subcontent--&gt;
+	&lt;!--subcontent
+		inside of hello2
+	subcontent--&gt;
+	there
+--&gt;
+&lt;!-- 
+one toksdalykas 
+
+
+
+dar karteli
+padaryta
+
+--&gt;
+&lt;/head&gt;
+&lt;body&gt;
+This place for static block assign programically self
+&lt;hr&gt;
+{hello_world}
+&lt;hr&gt;
+&lt;table&gt;
+    &lt;!-- START row --&gt;
+        &lt;tr&gt;
+            &lt;!-- START cell --&gt;&lt;td&gt;{td_value}&lt;/td&gt;&lt;!-- END cell --&gt;
+        &lt;/tr&gt;
+    &lt;!-- END row --&gt;
+&lt;/table&gt;
+&lt;hr&gt;
+&lt;div&gt;
+    BARS IN BERLIN:
+    &lt;!-- START bar --&gt;
+    &lt;ul&gt;
+        &lt;li&gt;&lt;strong&gt;{name}&lt;/strong&gt;&lt;/li&gt;
+        &lt;li&gt;{desc}&lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;!-- END bar --&gt;
+&lt;/div&gt;
+&lt;hr&gt;
+Coding PHP is &lt;!-- START opt1 --&gt;fun&lt;!-- END opt1 --&gt;&lt;!-- START opt2 --&gt;boring&lt;!-- END opt2 --&gt;
+&lt;hr&gt;
+&lt;!-- list {variable1} {variable2} list --&gt;
+&lt;hr&gt;
+&lt;div name=div&gt;&lt;/div&gt;
+&lt;hr&gt;
+My invented code advantage:&lt;xmp&gt;For description changed {} to [], name to nane
+&lt; !-- START blockname -- &gt;...&lt; !-- END blockname -- &gt; =&gt; &lt; !-- blockname ... blockname -- &gt; Visible block.(optional if fix=True)
+&lt; !-- blockname ...-- &gt; =&gt; Not visible block, can output only self or if is [blockname] inside visible block.
+[source] =&gt; [source] if is debug=True and undefined block
+&lt;form nane=form1&gt;...&lt;/form&gt; =&gt; [form1]
+&lt;form&gt;...&lt;/from&gt; =&gt; [form] (only if form is one)
+&lt;tag nane=name0&gt;...&lt;/tag&gt; =&gt; &lt;tag nane=name0&gt;[name0]&lt;/tag&gt;
+&lt;input type=text name=value1&gt; =&gt; &lt;input type name=value value=[value1]&gt;
+&lt;input type=text nane=value2 value='dont overwrite default'&gt; =&gt; &lt;input type nane=value2 value='dont overwrite default'&gt;
+&lt;textarea nane=text&gt;&lt;/textarea&gt; =&gt; &lt;textarea nane=text&gt;[text]&lt;/textarea&gt;
+For future
+&lt; !-- url -- &gt; or &lt; !-- INCLUDE ...-- &gt; - include file like template,css,js or other
+&lt;select nane=select1&gt;&lt;/select&gt; =&gt; &lt;select nane=select1&gt;&lt;option value=value1&gt;&lt;option value=value2&gt;...&lt;option value=valuen&gt;&lt;/select&gt;
+Your comments,feedbacks and bugs send me by email girner@gmail.com
+&lt;/xmp&gt;
+
+&lt;hr&gt;
+%s
+&lt;/body&gt;
+&lt;/html&gt;
+""" % form
+
+debug=False
+if debug:
+	load_template(line)
+	parse_fix()	
+	parse_block()
+	parse_variable()
+	parse_form()
+	print load_template()
+	line=load_template()
+else:
+	line=load_template(line,fix=True,block=True,variable=True,form=True,overwrite=True)
+#raise SystemExit
+
+debug=False
+
+set_block('opt2' if True else 'otp1')
+rows=[]
+for tr in range(3):
+	vars=[]
+	for td in range(3):
+		vars.append({'td_value':'%s:%s' % (tr,td)})
+	cell=assign_block('cell',vars)
+	rows.append({'cell':cell})
+row=assign_block('row',rows)
+
+vars=(
+	{'variable1':'variable1','variable2':'variable2'},
+	{'variable1':'variable1','variable2':'variable2'},
+)
+list=assign_block('list',vars,debug=debug)
+vars=(
+{'name':'Sonderbar','desc':'best red vine in town'},
+{'name':'Wunderbar','desc':'happy hour ends at 9 pm'},
+)
+bar=assign_block('bar',vars,debug=debug)
+vars={'list':list,'bar':bar,'row':row,
+	'hello_world': 'hello world!',
+	'Miestas':'Klaipëda',
+	'Paðtas':'girner@gmail.com',
+	'Telefonas':'+370-65596865',
+	'Name':'Nerijus',
+	'Surname':'Girskis',
+	'Slapyvardis':'girner',
+	'Gimtadienis':'1979-03-18',
+	'test':'overwrited',
+	'demo':'&lt;fix&gt;&lt;overwrite&gt;',
+	'div':'work where inside name attribute(optional by allowed tags: textarea, select, iframe, div), can skip with value attribute',
+}
+globals().update(vars)
+
+def main(str=False):
+	text=assign(line,debug=debug,vars=vars)
+	if str:return text
+	print text
+	print '&lt;pre&gt;'
+	print 'vars=',vars.keys()
+	print 'blocks=',blocks.keys()
+	print '#'*80
+	print escape(open(__file__,'r').read())
+	print '#'*80
+	print 'locals',locals().keys()
+	print 'globals',globals().keys()
+	print '&lt;/pre&gt;'
+
+if __name__ == "__main__":
+	main()
+else:
+	#asa
+	dummy=1
+################################################################################
+locals ['text', 'str']
+globals ['vars', 'set_block', 'load_template', 'demo', 'Slapyvardis', 'parse_block', 'escape', 'row', 'rows', 'tr', '__package__', 'cell', 're', 'Telefonas', 'Pa\xf0tas', 'test', 'Surname', 'td', 'main', '__doc__', 'parse_fix', 'blocks', 'Name', 'form', '__builtins__', '__file__', 'Gimtadienis', '__name__', 'line', 'hello_world', 'get_block', 'bar', 'parse_form', 'assign_block', 'list', 'Miestas', 'debug', 'div', 'assign', 'parse_variable']
+</pre>
