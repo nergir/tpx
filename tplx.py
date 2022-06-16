@@ -1,38 +1,38 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
-
+from __future__ import print_function
 from template import *
 from cgi import escape
 
-form="""
-<form name=User action=?f=user method=post enctype=multipart/form-data onSubmit=return(check(this)) lang='Ar iðsiøsti skelbimà?' onReset="return(confirm('Ar iðvalyti anketos laukus?'))">
+form = """
+<form name=User action=?f=user method=post enctype=multipart/form-data onSubmit=return(check(this)) lang='Ar iï¿½siï¿½sti skelbimï¿½?' onReset="return(confirm('Ar iï¿½valyti anketos laukus?'))">
 <p class=ln>Privilegija</p><select lang='0`Parinkite privilegija' name=Privilegija><option value=0><option value=1>Admin</option></select>
 <fieldset><legend onclick=toggle(this.nextSibling) style=cursor:pointer>Informacija</legend><div>
 <p class=ln>Vardas</p><input type=text name=Name style=text-transform:capitalize>
-<br><p class=ln>Pavardë</p><input type=text name=Surname style=text-transform:capitalize>
+<br><p class=ln>Pavardï¿½</p><input type=text name=Surname style=text-transform:capitalize>
 <br><p class=ln>Gimtadienis</p><input type=text name=Gimtadienis> <input type=button title='Kalendorius' id=date class=sq onclick=showXY(event,'cldr') value=...>
 <br><p class=ln>Slapyvardis</p><input type=text name=Slapyvardis>
-<br><p class=ln>Slaptaþodis</p><input type=password name=Login maxLength=20>
+<br><p class=ln>Slaptaï¿½odis</p><input type=password name=Login maxLength=20>
 <!--human-->
 </div>
 </fieldset>
 <fieldset><legend onclick=toggle(this.nextSibling) style=cursor:pointer>Kontaktai</legend><div>
 <p class=ln>Telefonas</p><input type=text name=Telefonas maxLength=8>
-<br><p class=ln>Paðtas</p><input type=text name=Paðtas maxLength=20>
+<br><p class=ln>Paï¿½tas</p><input type=text name=Paï¿½tas maxLength=20>
 </div>
 </fieldset>
 <fieldset><legend onclick=toggle(this.nextSibling) style=cursor:pointer>Adresas</legend><div>
 <p class=ln>Miestas</p><input type=text name=Miestas style=text-transform:capitalize>
-<br><p class=ln>Gatvë</p><input type=text name=Gatvë>
+<br><p class=ln>Gatvï¿½</p><input type=text name=Gatvï¿½>
 <br><p class=ln>Namas</p><input type=text name=Namas>
 <br><p class=ln>Butas</p><input type=text name=Butas>
 </div>
 </fieldset>
 <fieldset><legend onclick=toggle(this.nextSibling) style=cursor:pointer>Extra</legend><div style=display:none>
 <p class=ln>Kaina</p><input type=text name=Kaina maxLength=20> <input type=button title='Kalkuliatorius' id=number class=sq onclick=showXY(event,'calc') value=...>
-<br><p class=ln>Spalva</p><input type=text name=Spalva maxLength=6 style=text-transform:uppercase onkeydown=keydown(event,'clrs') onkeyup=if((s=clrget(Title(this.value)))==this.value)return;this.value=s;color.style.backgroundColor=s> <input type=button title='Spalvø paletë' id=color class=sq onclick=showXY(event,'clrs') value=...>
-<br><p class=ln>Logo</p><input name=Logo lang='/^\d+(,\d+)*$/'> <input type=button class=sq value=... onclick=showXY(event,'upload',uploading,'Byla') title='Parinkti bylà'>
-<br><p class=ln>Foto</p><input name=Foto lang='/^\d+(,\d+)*$/'> <input type=button class=sq value=... onclick=showXY(event,'upload',uploading,'Byla') title='Parinkti bylà'>
+<br><p class=ln>Spalva</p><input type=text name=Spalva maxLength=6 style=text-transform:uppercase onkeydown=keydown(event,'clrs') onkeyup=if((s=clrget(Title(this.value)))==this.value)return;this.value=s;color.style.backgroundColor=s> <input type=button title='Spalvï¿½ paletï¿½' id=color class=sq onclick=showXY(event,'clrs') value=...>
+<br><p class=ln>Logo</p><input name=Logo lang='/^\d+(,\d+)*$/'> <input type=button class=sq value=... onclick=showXY(event,'upload',uploading,'Byla') title='Parinkti bylï¿½'>
+<br><p class=ln>Foto</p><input name=Foto lang='/^\d+(,\d+)*$/'> <input type=button class=sq value=... onclick=showXY(event,'upload',uploading,'Byla') title='Parinkti bylï¿½'>
 <br><p class=ln>CV</p><input name=CV lang='/^\d+(,\d+)*$/'>
 </div>
 </fieldset>
@@ -48,10 +48,10 @@ form="""
 <input value=321 name=demo>
 <input name=test value=123>
 """
-line="""
+line = """
 <html>
 <head>
-	<title>ngs — ng solution. For everyone</title>
+	<title>ngs ï¿½ ng solution. For everyone</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <!--ona at-si-ti-ko -->
 <!--tbl
@@ -138,71 +138,75 @@ Your comments,feedbacks and bugs send me by email girner@gmail.com
 </html>
 """ % form
 
-debug=False
+debug = False
 if debug:
     load_template(line)
     parse_fix()
     parse_block()
     parse_variable()
     parse_form()
-    print load_template()
-    line=load_template()
+    print(load_template())
+    line = load_template()
 else:
-    line=load_template(line,fix=True,block=True,variable=True,form=True,overwrite=True)
+    line = load_template(line, fix=True, block=True,
+                         variable=True, form=True, overwrite=True)
 #raise SystemExit
 
-debug=False
+debug = False
 
 set_block('opt2' if True else 'otp1')
-rows=[]
+rows = []
 for tr in range(3):
-    vars=[]
+    vars = []
     for td in range(3):
-        vars.append({'td_value':'%s:%s' % (tr,td)})
-    cell=assign_block('cell',vars)
-    rows.append({'cell':cell})
-row=assign_block('row',rows)
+        vars.append({'td_value': '%s:%s' % (tr, td)})
+    cell = assign_block('cell', vars)
+    rows.append({'cell': cell})
+row = assign_block('row', rows)
 
-vars=(
-    {'variable1':'variable1','variable2':'variable2'},
-    {'variable1':'variable1','variable2':'variable2'},
+vars = (
+    {'variable1': 'variable1', 'variable2': 'variable2'},
+    {'variable1': 'variable1', 'variable2': 'variable2'},
 )
-list=assign_block('list',vars,debug=debug)
-vars=(
-{'name':'Sonderbar','desc':'best red vine in town'},
-{'name':'Wunderbar','desc':'happy hour ends at 9 pm'},
+list = assign_block('list', vars, debug=debug)
+vars = (
+    {'name': 'Sonderbar', 'desc': 'best red vine in town'},
+    {'name': 'Wunderbar', 'desc': 'happy hour ends at 9 pm'},
 )
-bar=assign_block('bar',vars,debug=debug)
-vars={'list':list,'bar':bar,'row':row,
-    'hello_world': 'hello world!',
-    'Miestas':'Klaipëda',
-    'Paðtas':'girner@gmail.com',
-    'Telefonas':'+370-65596865',
-    'Name':'Nerijus',
-    'Surname':'Girskis',
-    'Slapyvardis':'girner',
-    'Gimtadienis':'1979-03-18',
-    'test':'overwrited',
-    'demo':'<fix><overwrite>',
-    'div':'work where inside name attribute(optional by allowed tags: textarea, select, iframe, div), can skip with value attribute',
-}
+bar = assign_block('bar', vars, debug=debug)
+vars = {'list': list, 'bar': bar, 'row': row,
+        'hello_world': 'hello world!',
+        'Miestas': 'Klaipï¿½da',
+        'Paï¿½tas': 'girner@gmail.com',
+        'Telefonas': '+370-65596865',
+        'Name': 'Nerijus',
+        'Surname': 'Girskis',
+        'Slapyvardis': 'girner',
+        'Gimtadienis': '1979-03-18',
+        'test': 'overwrited',
+        'demo': '<fix><overwrite>',
+        'div': 'work where inside name attribute(optional by allowed tags: textarea, select, iframe, div), can skip with value attribute',
+        }
 globals().update(vars)
 
+
 def main(str=False):
-    text=assign(line,debug=debug,vars=vars)
-    if str:return text
-    print text
-    print '<pre>'
-    print 'vars=',vars.keys()
-    print 'blocks=',blocks.keys()
-    print '#'*80
-    print escape(open(__file__,'r').read())
-    print '#'*80
-    print 'locals',locals().keys()
-    print 'globals',globals().keys()
-    print '</pre>'
+    text = assign(line, debug=debug, vars=vars)
+    if str:
+        return text
+    print(text)
+    print('<pre>')
+    print('vars=', vars.keys())
+    print('blocks=', blocks.keys())
+    print('#'*80)
+    print(escape(open(__file__, 'r').read()))
+    print('#'*80)
+    print('locals', locals().keys())
+    print('globals', globals().keys())
+    print('</pre>')
+
 
 if __name__ == "__main__":
     main()
 else:
-    dummy=1
+    dummy = 1
