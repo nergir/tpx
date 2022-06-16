@@ -5,34 +5,34 @@ from template import *
 from cgi import escape
 
 form = """
-<form name=User action=?f=user method=post enctype=multipart/form-data onSubmit=return(check(this)) lang='Ar i�si�sti skelbim�?' onReset="return(confirm('Ar i�valyti anketos laukus?'))">
+<form name=User action=?f=user method=post enctype=multipart/form-data onSubmit=return(check(this)) lang='Ar išsiųsti skelbimą?' onReset="return(confirm('Ar išvalyti anketos laukus?'))">
 <p class=ln>Privilegija</p><select lang='0`Parinkite privilegija' name=Privilegija><option value=0><option value=1>Admin</option></select>
 <fieldset><legend onclick=toggle(this.nextSibling) style=cursor:pointer>Informacija</legend><div>
 <p class=ln>Vardas</p><input type=text name=Name style=text-transform:capitalize>
-<br><p class=ln>Pavard�</p><input type=text name=Surname style=text-transform:capitalize>
+<br><p class=ln>Pavardė</p><input type=text name=Surname style=text-transform:capitalize>
 <br><p class=ln>Gimtadienis</p><input type=text name=Gimtadienis> <input type=button title='Kalendorius' id=date class=sq onclick=showXY(event,'cldr') value=...>
 <br><p class=ln>Slapyvardis</p><input type=text name=Slapyvardis>
-<br><p class=ln>Slapta�odis</p><input type=password name=Login maxLength=20>
+<br><p class=ln>Slaptažodis</p><input type=password name=Login maxLength=20>
 <!--human-->
 </div>
 </fieldset>
 <fieldset><legend onclick=toggle(this.nextSibling) style=cursor:pointer>Kontaktai</legend><div>
 <p class=ln>Telefonas</p><input type=text name=Telefonas maxLength=8>
-<br><p class=ln>Pa�tas</p><input type=text name=Pa�tas maxLength=20>
+<br><p class=ln>Paštas</p><input type=text name=Paštas maxLength=20>
 </div>
 </fieldset>
 <fieldset><legend onclick=toggle(this.nextSibling) style=cursor:pointer>Adresas</legend><div>
 <p class=ln>Miestas</p><input type=text name=Miestas style=text-transform:capitalize>
-<br><p class=ln>Gatv�</p><input type=text name=Gatv�>
+<br><p class=ln>Gatvė</p><input type=text name=Gatvė>
 <br><p class=ln>Namas</p><input type=text name=Namas>
 <br><p class=ln>Butas</p><input type=text name=Butas>
 </div>
 </fieldset>
 <fieldset><legend onclick=toggle(this.nextSibling) style=cursor:pointer>Extra</legend><div style=display:none>
 <p class=ln>Kaina</p><input type=text name=Kaina maxLength=20> <input type=button title='Kalkuliatorius' id=number class=sq onclick=showXY(event,'calc') value=...>
-<br><p class=ln>Spalva</p><input type=text name=Spalva maxLength=6 style=text-transform:uppercase onkeydown=keydown(event,'clrs') onkeyup=if((s=clrget(Title(this.value)))==this.value)return;this.value=s;color.style.backgroundColor=s> <input type=button title='Spalv� palet�' id=color class=sq onclick=showXY(event,'clrs') value=...>
-<br><p class=ln>Logo</p><input name=Logo lang='/^\d+(,\d+)*$/'> <input type=button class=sq value=... onclick=showXY(event,'upload',uploading,'Byla') title='Parinkti byl�'>
-<br><p class=ln>Foto</p><input name=Foto lang='/^\d+(,\d+)*$/'> <input type=button class=sq value=... onclick=showXY(event,'upload',uploading,'Byla') title='Parinkti byl�'>
+<br><p class=ln>Spalva</p><input type=text name=Spalva maxLength=6 style=text-transform:uppercase onkeydown=keydown(event,'clrs') onkeyup=if((s=clrget(Title(this.value)))==this.value)return;this.value=s;color.style.backgroundColor=s> <input type=button title='Spalvų paletė' id=color class=sq onclick=showXY(event,'clrs') value=...>
+<br><p class=ln>Logo</p><input name=Logo lang='/^\d+(,\d+)*$/'> <input type=button class=sq value=... onclick=showXY(event,'upload',uploading,'Byla') title='Parinkti bylą'>
+<br><p class=ln>Foto</p><input name=Foto lang='/^\d+(,\d+)*$/'> <input type=button class=sq value=... onclick=showXY(event,'upload',uploading,'Byla') title='Parinkti bylą'>
 <br><p class=ln>CV</p><input name=CV lang='/^\d+(,\d+)*$/'>
 </div>
 </fieldset>
@@ -51,7 +51,7 @@ form = """
 line = """
 <html>
 <head>
-	<title>ngs � ng solution. For everyone</title>
+	<title>ngs | ng solution. For everyone</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <!--ona at-si-ti-ko -->
 <!--tbl
@@ -176,13 +176,13 @@ vars = (
 bar = assign_block('bar', vars, debug=debug)
 vars = {'list': list, 'bar': bar, 'row': row,
         'hello_world': 'hello world!',
-        'Miestas': 'Klaip�da',
-        'Pa�tas': 'girner@gmail.com',
-        'Telefonas': '+370-65596865',
+        'Miestas': 'Klaipėda',
+        'Paštas': 'girner@gmail.com',
+        'Telefonas': '+370-611-38490',
         'Name': 'Nerijus',
         'Surname': 'Girskis',
         'Slapyvardis': 'girner',
-        'Gimtadienis': '1979-03-18',
+        'Gimtadienis': '0000-03-18',
         'test': 'overwrited',
         'demo': '<fix><overwrite>',
         'div': 'work where inside name attribute(optional by allowed tags: textarea, select, iframe, div), can skip with value attribute',
